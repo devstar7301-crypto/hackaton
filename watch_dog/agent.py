@@ -4,6 +4,7 @@ from google.adk.tools.agent_tool import AgentTool
 from . import prompt
 from .sub_agents.operational_anomaly_detection import operational_anomaly_detection_agent
 from .sub_agents.cost_anomaly_detection import cost_anomaly_detection_agent
+from .sub_agents.insights import insights_agent
 
 
 MODEL = "gemini-2.5-pro"
@@ -19,7 +20,8 @@ watch_dog = LlmAgent(
     output_key="anomaly_report",
     tools=[
         AgentTool(agent=operational_anomaly_detection_agent),
-        AgentTool(agent=cost_anomaly_detection_agent)
+        AgentTool(agent=cost_anomaly_detection_agent),
+        AgentTool(agent=insights_agent),
     ],
 )
 

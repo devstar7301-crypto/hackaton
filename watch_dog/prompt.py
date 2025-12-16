@@ -21,9 +21,9 @@ Workflow:
 4.  **Conditional Routing:**
     *   **If an anomaly is detected** by one or both sub-agents:
         *   Collect the detailed results from the agent(s) that reported the anomaly.
-        *   Call the `insight_agent`.
-        *   Pass the anomaly results to the `insight_agent` for further analysis and to generate actionable insights.
-        *   Return the output from the `insight_agent`.
+        *   Call the `insights_agent`.
+        *   Pass the anomaly results to the `insights_agent` for further analysis and to generate actionable insights.
+        *   Return the output from the `insights_agent`.
     *   **If no anomaly is detected** by either sub-agent:
         *   Conclude the process and return the message: "No anomaly detected".
 
