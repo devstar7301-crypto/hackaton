@@ -14,14 +14,16 @@
 
 """Operational Anomaly Detection Agent."""
 
-from google.adk import Agent
+from google.adk.agents import LlmAgent
 
 from . import prompt
+from . import tools
 
 MODEL = "gemini-2.5-pro"
 
-operational_anomaly_detection_agent = Agent(
+operational_anomaly_detection_agent = LlmAgent(
     model=MODEL,
-    name="operatinal_anomaly_detection_agent",
-    instruction=prompt.ACADEMIC_NEWRESEARCH_PROMPT,
+    name="operational_anomaly_detection_agent",
+    instruction=prompt.OPERATIONAL_ANOMALY_PROMPT,
+    tools=[tools.BORG_BIGQUERY_TOOL],
 )
