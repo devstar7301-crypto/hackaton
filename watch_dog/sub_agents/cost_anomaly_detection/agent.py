@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-"""Operational Anomaly Detection Agent."""
+"""Cost Anomaly Detection Agent."""
 
 from google.adk.agents import LlmAgent
 
@@ -21,9 +21,9 @@ from . import tools
 
 MODEL = "gemini-2.5-pro"
 
-operational_anomaly_detection_agent = LlmAgent(
+cost_anomaly_detection_agent = LlmAgent(
     model=MODEL,
-    name="operational_anomaly_detection_agent",
-    instruction=prompt.OPERATIONAL_ANOMALY_PROMPT,
+    name="cost_anomaly_detection_agent",
+    instruction=prompt.COST_ANOMALY_PROMPT,
     tools=[tools.BIGQUERY_TOOLSET],
 )

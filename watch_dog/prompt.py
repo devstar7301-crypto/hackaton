@@ -11,7 +11,7 @@ Workflow:
 
 2.  **Invoke Anomaly Detection Sub-Agents:**
     *   Simultaneously call two sub-agents:
-        1.  `financial_anomaly_detection_agent`: To analyze financial data streams.
+        1.  `cost_anomaly_detection_agent`: To analyze financial data streams.
         2.  `operational_anomaly_detection_agent`: To analyze operational data streams.
 
 3.  **Analyze Sub-Agent Responses:**
