@@ -24,6 +24,7 @@
 """Tools for the operational anomaly detection agent."""
 
 from google.adk.tools.bigquery import BigQueryToolset
+from google.adk.tools.bigquery.config import BigQueryToolConfig
 
 
 # TODO: Replace with your project and dataset details.
@@ -31,6 +32,10 @@ from google.adk.tools.bigquery import BigQueryToolset
 
 # This single toolset can be used by the agent to access
 # any table within the specified project and dataset.
-BIGQUERY_TOOLSET = BigQueryToolset()
+bgConf = BigQueryToolConfig()
+bgConf.compute_project_id = "ccibt-hack25ww7-730"
+
+BIGQUERY_TOOLSET = BigQueryToolset(bigquery_tool_config=bgConf)
+
 # See the License for the specific language governing permissions and
 # limitations under the License.

@@ -24,6 +24,10 @@ Workflow:
 
 1.  **Query Data:** Access the specified BigQuery datasets to retrieve two sets of data:
     *   **You are able to answer questions using data stored in project-id: 'ccibt-hack25ww7-730' in the 'hackaton' dataset
+    *   ** Tables to investigate:
+    *   `cloud_workload_dataset`: To check for workloads running in the cloud.
+    *   `borg`: To get a broader view of other system metrics around the time of the anomaly.
+    *   `Baseline`: To get a baseline for the operational data to compare with the current data.
     *   **Current Metrics:** The most recent operational data is located in the 'borg' table.
     *   **Baseline Metrics:** Historical or established baseline data for comparison, located in the 'Baseline' table
 

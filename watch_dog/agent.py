@@ -5,6 +5,7 @@ from . import prompt
 from .sub_agents.operational_anomaly_detection import operational_anomaly_detection_agent
 from .sub_agents.cost_anomaly_detection import cost_anomaly_detection_agent
 from .sub_agents.insights import insights_agent
+from .sub_agents.presentation import presentation_agent
 
 
 MODEL = "gemini-2.5-pro"
@@ -22,6 +23,7 @@ watch_dog = LlmAgent(
         AgentTool(agent=operational_anomaly_detection_agent),
         AgentTool(agent=cost_anomaly_detection_agent),
         AgentTool(agent=insights_agent),
+        AgentTool(agent=presentation_agent),
     ],
 )
 
