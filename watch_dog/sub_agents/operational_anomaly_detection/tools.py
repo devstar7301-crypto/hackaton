@@ -23,21 +23,16 @@
 
 """Tools for the operational anomaly detection agent."""
 
-from google.adk.tools import BigQueryTool
+from google.adk.tools.bigquery import BigQueryToolset
 
 
 # TODO: Replace with your project and dataset details.
 PROJECT_ID = "ccibt-hack25ww7-730"
 DATASET_ID = "hackaton"
 
-
-BORG_BIGQUERY_TOOL = BigQueryTool(
-    project=PROJECT_ID, dataset=DATASET_ID, table="borg"
-)
-
-BASELINE_BIGQUERY_TOOL = BigQueryTool(
-    project=PROJECT_ID, dataset=DATASET_ID, table="Baseline"
-)
+# This single toolset can be used by the agent to access
+# any table within the specified project and dataset.
+BIGQUERY_TOOLSET = BigQueryToolset()
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
@@ -52,6 +47,7 @@ Your primary function is to identify anomalies in the system's operational healt
 Workflow:
 
 1.  **Query Data:** Access the specified BigQuery datasets to retrieve two sets of data:
+    *   **You are able to answer questions on data stored in project-id: '{PROJECT_ID}' on the `{DATASET_ID}` dataset.
     *   **Current Metrics:** The most recent operational data. Only look at the last 5 minutes of data
     *   **Baseline Metrics:** Historical or established baseline data for comparison.
 

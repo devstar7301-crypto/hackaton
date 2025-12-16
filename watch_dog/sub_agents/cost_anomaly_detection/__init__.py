@@ -12,18 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-"""Operational Anomaly Detection Agent."""
-
-from google.adk.agents import LlmAgent
-
-from . import prompt
+# pylint: disable=unused-import
+from .agent import cost_anomaly_detection_agent
 from . import tools
-
-MODEL = "gemini-2.5-pro"
-
-operational_anomaly_detection_agent = LlmAgent(
-    model=MODEL,
-    name="operational_anomaly_detection_agent",
-    instruction=prompt.OPERATIONAL_ANOMALY_PROMPT,
-    tools=[tools.BORG_BIGQUERY_TOOL],
-)
